@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+<title>portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport">
+<style>
+    @media all and (min-width:768px){
+body{
+margin:30px;
+ background: #f4f7fb;
+ color: #222;
+}
+}
+nav{width:100%;
+     border-radius:10px;
+     display:flex;
+     background:navy;
+     justify-content:space-between;
+      align-items:center;
+}
+nav h2{color:white;
+font-size:30px;
+padding:10px;}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap: 30px;
+}
+nav ul li a{
+color:white;
+font-size:20px;
+font-family:Arial, Helvetica, sans-serif;
+text-decoration:none;
+}
+nav ul li a:hover{font-weight:bold;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+padding:10px;
+color:#00d4ff;
+}
+section{
+    padding:10px;
+}
+#home{
+    margin:20px;
+     border-radius:10px;
+     border-shadow:0 0 10px rgba(0,0,0,0.1);
+      text-align:center;
+      padding:40px 8%;
+
+    
+
+     }
+#about{
+    margin:20px;
+     border-radius:10px;
+     border-shadow:0 0 10px rgba(0,0,0,0.1);
+     font-size:19px;
+     }
+      .box{
+      background:#f4f7fb;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  font-size:19px;
+    }
+
+     .btn{
+        background-color:rgb(19, 181, 235);
+        color:white;
+        border-radius: 30px;
+        padding:10px;
+        font-weight:bold;
+         display:inline-block;
+cursor:pointer;
+        }
+h2{
+color:orange;
+font-size:30px;
+}
+
+table{width:90%;
+margin:30px;
+background:white;}
+
+table th{
+ padding:10px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color:	green;
+border:1px solid #ddd;
+}
+td{
+padding:10px;
+border:1px solid #ddd;
+}
+
+input,textarea{
+padding:10px;
+border:2px solid #ccc;
+border-radius:5px;
+}
+ 
+</style>
+</head>
+<body>
+<nav>
+<h2><b>MyPortfolio</b></h2>
+<ul >
+<li><a href="#Home">Home</a></li>
+<li><a href="#About">About</a></li> 
+<li><a href="#Projects">Projects</a></li>
+<li><a href="#Contact">Contact</a></li>    
+</ul>
+</nav>
+
+<section id="home">
+   <h2>"Hi, I'm Sanvika👋<br>
+A Front-End Developer passionate  about building responsive and user friendly websites."</h2><br>
+</section>
+
+<section id="about">
+    <div class="box">
+<h2>About Me</h2>
+    <p>I am a B.Sc Computer Science student with a passionate about  web development.<br>
+         I enjoy creating modern responsive websites using HTML, CSS, and JavaScript.<br>
+         My goal is to become a professional Front-End Developer. </p>
+         </div>
+ </section>
+
+<section>
+    <div class="box">
+    <h2><caption>Projects</caption></h2>
+    <table border="2" ALIGN=""CENTER" cell spacing="2" cell padding="3">
+     <th>Project</th><br>
+         <th>Description</th>
+          <th>Tech used</th>
+<th>Link to view</th>
+<tr><td>Design of Landing page</td>
+<td>Build beautiful and simple web pages using only HTML and CSS. <BR>
+    Clean design, responsive layout, and easy to understand structure.</td>
+<td>HTML, CSS</td>
+<td>https://github.com/Sanvika1155/incodevision-intern/blob/main/landing%20page1%20.html</td>
+</tr>
+<tr>
+<td>Calculator</td>
+<td>Used to calculate maths basic operations</td>
+<td>HTML, CSS, Basic JavaScript</td>
+<td>https://github.com/Sanvika1155/incodevision-intern/blob/main/calculator.html</td>
+    </tr>
+<tr><td>Portfolio Website</td>
+<td>My personal portfolio</td>
+
+<td>HTML, CSS</td>
+
+</tr>
+
+<td>    </table>
+</div>
+</section>
+
+<section>
+    <div class="box">
+        <h2>Contact Me</h2>
+    <form action="https://api.web3forms.com/submit"  method="post">
+ <input type="hidden" name="access_key" value="f39fe3fe-81eb-489e-89c1-48fa9da694e7">
+        <label>Name:</label>
+        <input type="text" name="name" placeholder="enter your name..." required><br><br>
+<label>Email:</label>
+        <input type="email" name="email" placeholder="enter your email..." required><br><br>
+        <label>message:</label>
+      <br>
+
+        <textarea name="message" rows="5" required></textarea> <br><br>
+        <button  class="btn" type="submit">Send Message</button>      
+
+       </form>
+<p id="msg" style="color:green;margin-top:10px;"></p>
+       </div>
+</section>
+<script>
+const form=document.getElementById("contactForm");
+
+form.addEventListener("submit",async function(e){
+e.preventDefault();
+
+const data=new FormData(form);
+
+let response=await
+fetch(form.action,{
+method: "post",
+body:data,
+headers: { 'accept': 'application/json' }
+});
+
+
+if(response.ok){
+msg.innerText= "Message sent successfully✅";
+
+form.reset();
+}
+else{
+msg.innerText="something went wrong❌";
+}
+});
+</script>
+</body>
+</html>
